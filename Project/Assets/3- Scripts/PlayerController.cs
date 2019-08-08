@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask movementMask;
     Camera cam;
     PlayerMotor motor;
+    public Interactable focus;
     
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // If left click
         if(Input.GetMouseButton(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -32,22 +34,59 @@ public class PlayerController : MonoBehaviour
                 // Move our player to what we hit 
 
                 // Stop focusing any objects
-
+                RemoveFocus();
             }
         }
 
-        if(Input.GetMouseButton(1))  // 1 for right mouse button
+        // If right click
+        if(Input.GetMouseButton(1))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit; 
 
-            if(Physics.Raycast(ray, out hit, 100, movementMask))
+            if(Physics.Raycast(ray, out hit, 100))
             {
                 // check if we hit an interractable
-                // if we did set it as our focus 
+                Interactable interactableObject = hit.collider.GetComponent<Interactable>();
+                // if we did set it as our focus
+                if(interactableObject != null)
+                {
+                    SetFocus(interactableObject);
+                } 
+                else
+                {
+                    RemoveFocus();
+                }
 
             }
         }
-        
     }
+
+    void SetFocus(Interactable newFocus)
+    {
+        if (newFocus != focus)
+        {
+            if (focus != null)
+            {
+                focus.OnDeFocused();
+            }
+
+            focus = newFocus;
+            motor.FollowTarget(newFocus);
+        }
+
+        newFocus.OnFocused(transform);
+    }
+
+    void RemoveFocus()
+    {
+        if (focus != null)
+            {
+                focus.OnDeFocused();
+            }
+            
+        focus = null;
+        motor.StopFollowingTarget();
+    }
+
 }
