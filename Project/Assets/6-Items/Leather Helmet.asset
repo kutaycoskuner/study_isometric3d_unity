@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 708a0f6ba386d464c8de7da8e2785952, type: 3}
   m_Name: Leather Helmet
   m_EditorClassIdentifier: 
-  name: Leather Helmet
-  icon: {fileID: 21300000, guid: d927d72f0f8ecd9458b4b8cedd4483fc, type: 3}
+  name: Steel Sword
+  icon: {fileID: 21300000, guid: bfa649a51c2cf904980fcbce6612b8bf, type: 3}
   isDefaultItem: 0
   equipSlot: 0
   armorModifier: 0
