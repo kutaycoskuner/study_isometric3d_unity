@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 708a0f6ba386d464c8de7da8e2785952, type: 3}
-  m_Name: Leather Helmet
+  m_Name: Shirt
   m_EditorClassIdentifier: 
-  name: Leather Helmet
-  icon: {fileID: 21300000, guid: d927d72f0f8ecd9458b4b8cedd4483fc, type: 3}
+  name: Shirt
+  icon: {fileID: 21300000, guid: 911a72db52fb1ff4c9ea2d1e76db545e, type: 3}
   isDefaultItem: 0
-  equipSlot: 0
+  equipSlot: 1
   armorModifier: 0
   damageModifier: 3

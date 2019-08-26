@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Iron Sword
   m_EditorClassIdentifier: 
   name: Iron Sword
-  icon: {fileID: 21300000, guid: 6901bf1871547c7418d40d926efb4f39, type: 3}
+  icon: {fileID: 21300000, guid: 9ed2d31e53555724dba678681d0d23f4, type: 3}
   isDefaultItem: 0
-  equipSlot: 3
+  equipSlot: 5
   armorModifier: 0
   damageModifier: 2
