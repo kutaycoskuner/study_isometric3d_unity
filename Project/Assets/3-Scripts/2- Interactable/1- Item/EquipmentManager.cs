@@ -15,7 +15,9 @@ public class EquipmentManager : MonoBehaviour
     #endregion
 
     public SkinnedMeshRenderer targetMesh;
+    public Equipment[] defaultEquipment;
     Equipment[] currentEquipment; // items we currently have equipped
+    
     SkinnedMeshRenderer[] currentMesh; // graphics of current equipment
 
 
@@ -31,11 +33,14 @@ public class EquipmentManager : MonoBehaviour
         int numSlots = System.Enum.GetNames(typeof(EquipmentSlot)).Length;
         currentEquipment = new Equipment[numSlots];
         currentMesh = new SkinnedMeshRenderer[numSlots];
+
+        EquipDefaultItems();
     }
 
     public void Equip (Equipment newItem)
     {
         int slotIndex = (int)newItem.equipSlot; 
+        Unequip(slotIndex);
         Equipment equippedItem = null;
 
         if(currentEquipment[slotIndex] != null)
@@ -59,7 +64,7 @@ public class EquipmentManager : MonoBehaviour
         currentMesh[slotIndex] = newMesh;
     }
 
-    public void Unequip(int slotIndex)
+    public Equipment Unequip(int slotIndex)
     {
         if (currentEquipment[slotIndex] != null)
         {
@@ -76,7 +81,10 @@ public class EquipmentManager : MonoBehaviour
             {   
                 onEquipmentChanged.Invoke(null, equippedItem);
             }
+
+            return equippedItem;
         }
+        return null;
     }
 
     public void UnequipAll ()
@@ -84,6 +92,16 @@ public class EquipmentManager : MonoBehaviour
         for(int i=0; i < currentEquipment.Length; i++)
         {
             Unequip(i);
+        }
+
+        EquipDefaultItems();
+    }
+
+    void EquipDefaultItems()
+    {
+        foreach(Equipment item in defaultEquipment)
+        {
+            Equip(item);
         }
     }
     
