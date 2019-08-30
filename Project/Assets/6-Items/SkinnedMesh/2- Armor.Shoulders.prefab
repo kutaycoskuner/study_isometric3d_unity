@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2009218422800598724
+--- !u!1 &5141741636254692530
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2190886734230473440}
-  - component: {fileID: 3195596751875970534}
+  - component: {fileID: 4818456484496341142}
+  - component: {fileID: 8133506513375143824}
   m_Layer: 0
   m_Name: 2- Armor.Shoulders
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2190886734230473440
+--- !u!4 &4818456484496341142
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2009218422800598724}
+  m_GameObject: {fileID: 5141741636254692530}
   m_LocalRotation: {x: -0.0000008120283, y: 0.7071068, z: 0.70710677, w: 0.00000081202836}
   m_LocalPosition: {x: 0.000000014901161, y: 0.006959665, z: 0.000000007450581}
   m_LocalScale: {x: 0.14018027, y: 0.14018027, z: 0.14018027}
@@ -31,13 +31,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &3195596751875970534
+--- !u!137 &8133506513375143824
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2009218422800598724}
+  m_GameObject: {fileID: 5141741636254692530}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
